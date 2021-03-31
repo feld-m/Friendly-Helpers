@@ -1,0 +1,28 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #4b4b4b;
+}
+
+.content-wrapper {
+  margin: 20px;
+}
+
+button {
+  border: 3px solid #4b4b4b;
+  background-color: inherit;
+  border-radius: 30px;
+  height: 35px;
+  width: 100px;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: #4b4b4b;
+  color: whitesmoke;
+}
+
+p {
+  width: 80%;
+}

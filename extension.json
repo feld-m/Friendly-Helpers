@@ -1,0 +1,40 @@
+{
+  "displayName": "Friendly Helpers",
+  "name": "friendly-helpers-feldm",
+  "platform": "web",
+  "version": "1.0.0",
+  "description": "Provides useful features that aren't available out of the box. Such as synchronous custom code.",
+  "author": {
+    "name": "FELD M"
+  },
+  "viewBasePath": "src/view/",
+  "actions": [
+    {
+      "displayName": "Synchronous Code",
+      "name": "synchronous-code",
+      "schema": {
+        "$schema": "http://json-schema.org/draft-04/schema#",
+        "type": "object",
+        "properties": {}
+      },
+      "libPath": "src/lib/actions/synchronousCode.js",
+      "viewPath": "actions/synchronousCode.html",
+      "transforms": [
+        {
+          "type": "function",
+          "propertyPath": "callback",
+          "parameters": ["event"]
+        }
+      ]
+    }
+  ],
+  "iconPath": "src/view/assets/icon.svg",
+  "configuration": {
+    "viewPath": "configuration/configuration.html",
+    "schema": {
+      "$schema": "http://json-schema.org/draft-04/schema#",
+      "type": "object",
+      "properties": {}
+    }
+  }
+}

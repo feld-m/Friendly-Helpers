@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Synchronous Code</title>
+  <link rel="stylesheet" href="../style.css">
+
+  <!-- The following styling gives the extension the look adobe launch uses too -->
+  <!-- STYLING SEE https://github.com/adobe/coral-spectrum -->
+  
+  <link rel="stylesheet" href="https://unpkg.com/@adobe/coral-spectrum@4.x.x/dist/css/coral.min.css">
+  <script src="https://unpkg.com/@adobe/coral-spectrum@4.x.x/dist/js/coral.min.js"
+    data-coral-icons-external="js"></script>
+  
+</head>
+
+<body class="coral--lightest">
+  <div class="content-wrapper">
+    <h3>Synchronous Code</h3>
+    <p>
+      Code set here is bundled directly into the Adobe Launch library JS file and can thus run immediately.<br>
+      The code is provided with one argument: <b>event</b>
+    </p>
+    <button id="codeButton" is="coral-button" icon="code" iconposition="left">Open Editor</button>
+  </div>
+
+  <script src="https://assets.adobedtm.com/activation/reactor/extensionbridge/extensionbridge.min.js"></script>
+  <script>
+    /* === Relevant documentation === //
+    https://experienceleague.adobe.com/docs/launch/using/extension-dev/web/views.html?lang=en#including-a-document-type
+    and
+    https://experienceleague.adobe.com/docs/launch/using/extension-dev/manifest.html?lang=en#extension-dev >> Function transform, see extension.json
+    // === */
+
+    var currentCode = '// custom code set here will be run immediately when the rule is called'
+    var codeBtn = document.getElementById("codeButton")
+    codeBtn.addEventListener("click", function () {
+      window.extensionBridge.openCodeEditor({ code: currentCode }).then(function (newCode) {
+        currentCode = newCode || currentCode; // set new code, or keep current!
+      })
+    })
+
+    window.extensionBridge.register({
+      init: function (info) {
+        // Populate view with info.settings which will exist if the user is editing something that was previously saved.
+        if (info.settings) { currentCode = info.settings.callback }
+      },
+      getSettings: function () {
+        // Return user-provided settings.
+        return { callback: currentCode }
+      },
+      validate: function () {
+        // Return whether the view is valid.
+        return typeof currentCode === 'string';
+      }
+    });
+  </script>
+</body>
+
+</html>
