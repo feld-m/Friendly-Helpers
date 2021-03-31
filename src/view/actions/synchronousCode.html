@@ -8,11 +8,11 @@
 
   <!-- The following styling gives the extension the look adobe launch uses too -->
   <!-- STYLING SEE https://github.com/adobe/coral-spectrum -->
-  
+
   <link rel="stylesheet" href="https://unpkg.com/@adobe/coral-spectrum@4.x.x/dist/css/coral.min.css">
   <script src="https://unpkg.com/@adobe/coral-spectrum@4.x.x/dist/js/coral.min.js"
     data-coral-icons-external="js"></script>
-  
+
 </head>
 
 <body class="coral--lightest">
@@ -20,9 +20,14 @@
     <h3>Synchronous Code</h3>
     <p>
       Code set here is bundled directly into the Adobe Launch library JS file and can thus run immediately.<br>
-      The code is provided with one argument: <b>event</b>
     </p>
     <button id="codeButton" is="coral-button" icon="code" iconposition="left">Open Editor</button>
+    <p>
+      The code is provided with two arguments: <b>event, target</b><br>
+      <i>this</i> is set to the triggering element, where the listener is registered. Defaults to <i>window.</i><br>
+      <i>target</i> refers to the
+      actual element clicked.
+    </p>
   </div>
 
   <script src="https://assets.adobedtm.com/activation/reactor/extensionbridge/extensionbridge.min.js"></script>

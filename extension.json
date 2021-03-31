@@ -23,7 +23,7 @@
         {
           "type": "function",
           "propertyPath": "callback",
-          "parameters": ["event"]
+          "parameters": ["event", "target"]
         }
       ]
     }
