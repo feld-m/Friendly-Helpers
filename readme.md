@@ -1,11 +1,17 @@
-# Adobe Launch Extension: Utilites
+# Adobe Launch Extension: Friendly Helpers
 
 This extension is aimed to extend the Adobe Launch Interface with useful features, which it does not provide out
 of the box.
 
 ## Features
 ### Synchronous Code
-This Action type lets you write JS code which is directly bundles into the launch library and does not need to be loaded from a seperate file first.
+Code entered into the **Custom Code** Action of the **Core** extension by Adobe is either bundled
+directly into the launch library filed, or loaded as a seperate file.
+This depends on the type of action involved.
+There are times, such as e.g. click listeners, where you absolutely want your custom code to be run
+immediately.
+The **Synchronous Code** Action type provided by this extension lets you write JS code which is directly
+bundled into the launch library and can thus run immediately when the rule is triggered. Always. No asynchronicity involved. 
 
 ## Making this extension available for your organization
 As of right now this extension is not released publically. This means you cannot directly add it to your launch property. Rather you need to release it by yourself.
