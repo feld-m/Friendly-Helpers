@@ -44,3 +44,6 @@ An easy way to get your extension to look like its part of the Adobe Launch Inte
   <script src="https://unpkg.com/@adobe/coral-spectrum@4.x.x/dist/js/coral.min.js"
     data-coral-icons-external="js"></script>
 ```
+Or you can see how its used in this extension by extracting the files as detailed here:
+- https://github.com/adobe/coral-spectrum > section: "Copying the distribution files"
+- refer to the `src/views/*/*.html` and `src/style`

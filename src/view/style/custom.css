@@ -9,6 +9,7 @@ body {
   margin: 20px;
 }
 
+/*
 button {
   border: 3px solid #4b4b4b;
   background-color: inherit;
@@ -22,6 +23,7 @@ button:hover {
   background-color: #4b4b4b;
   color: whitesmoke;
 }
+*/
 
 p {
   width: 80%;
