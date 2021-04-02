@@ -2,7 +2,7 @@
   "displayName": "Friendly Helpers",
   "name": "friendly-helpers-feldm",
   "platform": "web",
-  "version": "1.0.7",
+  "version": "1.0.9",
   "description": "Provides useful features that aren't available out of the box. Such as synchronous custom code.",
   "author": {
     "name": "FELD M"
@@ -23,7 +23,7 @@
         {
           "type": "function",
           "propertyPath": "callback",
-          "parameters": ["event", "target"]
+          "parameters": ["event", "target", "Promise"]
         }
       ]
     }
